@@ -46,12 +46,23 @@ class ViewController: UIViewController {
         }
 
         //функция сравнения строк - "авб" больше "ввш"
-        func compareStrings(string1: String, string2: String) -> Bool {
-            var compare: Bool = true
-            return compare
+        
+        let stringA: String = "абв"
+        let stringB: String = "ввш"
+        
+        func compareStrings(stringOne: String = stringA, stringTwo: String = stringB) -> String {
+            let isEqual = (stringA == stringB)
+            let result1: String = "строка А больше строки Б"
+            let result2: String = "строка Б больше строки А"
+            if isEqual == false {
+                return result1
+        } else {
+            return result2
+            }
         }
-        compareStrings(string1: "авб", string2: "ввш")
-
+        
+        print(compareStrings())
+        
         //циклический вызов функций - поломать приложение. Приложение поломается, потому что мы не задали условия прерывания вызова функции.
         func countDown(number1: Int) {
             print(number1)
